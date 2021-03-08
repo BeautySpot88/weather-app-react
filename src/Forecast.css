@@ -1,0 +1,31 @@
+h1 {
+  text-transform: capitalize;
+}
+
+.Search {
+  text-align: center;
+  margin: 10px;
+  padding: 5px;
+}
+
+.Search button {
+  margin: 5px;
+  padding: 5px;
+}
+
+.Search input {
+  height: 30px;
+}
+
+.Search input[type="search"] {
+}
+
+.Weather {
+  text-align: center;
+}
+
+.Weather li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
