@@ -18,6 +18,7 @@ h1 {
 }
 
 .Search input[type="search"] {
+  color: aquamarine;
 }
 
 .Weather {
