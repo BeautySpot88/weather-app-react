@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
-import FormattedDate from "./FormattedDate";
 import WeatherInfo from "./WeatherInfo";
 
 import "./Forecast.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 export default function Forecast(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
