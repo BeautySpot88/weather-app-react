@@ -61,11 +61,11 @@ export default function Forecast(props) {
               </button>
             </div>
             <div className="col-4 text-right">
-              <a href="#" id="cel-btn" className="cel-fah active">
+              <a href="/" id="cel-btn" className="cel-fah active">
                 ˚C
               </a>
               <span> | </span>
-              <a href="#" id="fah-btn" className="cel-fah">
+              <a href="/" id="fah-btn" className="cel-fah">
                 ˚F
               </a>
             </div>
