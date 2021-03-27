@@ -8,21 +8,16 @@ h1 {
   padding: 5px;
 }
 
-.Search button {
-  margin: 5px;
-  padding: 5px;
-}
-
-.Search input {
-  height: 30px;
-}
-
 .Search input[type="search"] {
   color: aquamarine;
 }
 
 .Weather {
   text-align: center;
+}
+
+.Weather p {
+  text-align: left;
 }
 
 .Weather li {

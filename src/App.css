@@ -1,1 +1,10 @@
+.App {
+  border: solid 2px black;
+  margin: 16px auto;
+  max-width: 80%;
+}
 
+.WeatherIcon img {
+  width: 10%;
+  height: auto;
+}

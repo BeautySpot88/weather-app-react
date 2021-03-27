@@ -1,68 +1,84 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormattedDate from "./FormattedDate";
+import WeatherInfo from "./WeatherInfo";
 
 import "./Forecast.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
+export default function Forecast(props) {
+  const [weatherData, setWeatherData] = useState({ ready: false });
+  const [city, setCity] = useState(props.defaultCity);
 
-export default function Forecast(){
-    let [city, setCity] = useState(" ");
-    let [loaded, setLoaded] = useState(false);
-    let [forecast, setForecast] = useState({}); 
-    let search = (
-    <div className="Search">
-            <form onSubmit={handleSubmit}>
-                <input type="search" placeholder="search city . . ." onChange={cityValue}></input>
-                <input type="submit"></input>
-            </form>
-            <button>Current Location</button>
-            <p>Last updated: Sunday 21:00</p>
-        </div>);
-
-    function showWeatherData(response){
-        setLoaded(true);
-        console.log(response.data.main);
-        setForecast({
-      temperature: response.data.main.temp,
+  function showWeatherData(response) {
+    console.log(response.data.name);
+    setWeatherData({
+      ready: true,
+      temperature: Math.round(response.data.main.temp),
+      city: response.data.name,
+      date: new Date(response.data.dt * 1000),
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
-      icon: `http://openweathermap.org/img/wn/${
-        response.data.weather[0].icon
-      }@2x.png`,
-      description: response.data.weather[0].description
+      icon: response.data.weather[0].icon,
+      description: response.data.weather[0].description,
+      //search for a city
     });
-        
-    }
-   
-    function handleSubmit(event){
-        event.preventDefault();
-        setLoaded(true);
+  }
+  function search() {
     let apiKey = "4964201fe38c8af7f212aad270301c64";
     let units = "metric";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showWeatherData);
-   }
+  }
 
-   function cityValue(event){
-       setCity(event.target.value);
-   }
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
 
-   if (loaded) {
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+  if (weatherData.ready) {
     return (
-    <div className="Forecast">
-        {search}
-        <div className="Weather">
-            <h1>{city}</h1>
-            <h3>{Math.round(forecast.temperature)}°C</h3>
-            <img src={forecast.icon} alt={forecast.description} />
-            <h3>{forecast.description}</h3>
-            <ul>
-                <li>Humidity: {forecast.humidity}%</li>
-                <li>Wind: {forecast.wind}</li>
-            </ul>
+      <div className="Forecast">
+        <div className="Search">
+          <div className="row">
+            <div className="col-4 text-left">
+              <form onSubmit={handleSubmit}>
+                <div className="input-group mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="city . . ."
+                    onChange={handleCityChange}
+                  />
+                  <input className="search-btn" type="submit" value="🔍" />
+                </div>
+              </form>
+            </div>
+            <div className="col-4 text-center">
+              <button type="button" className="btn btn-info">
+                Current Location
+              </button>
+            </div>
+            <div className="col-4 text-right">
+              <a href="#" id="cel-btn" className="cel-fah active">
+                ˚C
+              </a>
+              <span> | </span>
+              <a href="#" id="fah-btn" className="cel-fah">
+                ˚F
+              </a>
+            </div>
+          </div>
         </div>
-    </div>
+        <WeatherInfo data={weatherData} />
+      </div>
     );
-} else{
-    return search;
-}
+  } else {
+    search();
+    return "Loading. . . ";
+  }
 }
