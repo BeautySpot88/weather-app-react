@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
 
 import "./Forecast.css";
 
 export default function Forecast(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+  const element = <FontAwesomeIcon icon={faSearchLocation} />;
 
   function showWeatherData(response) {
-    console.log(response.data.name);
     setWeatherData({
       ready: true,
       temperature: Math.round(response.data.main.temp),
@@ -20,6 +22,7 @@ export default function Forecast(props) {
       humidity: response.data.main.humidity,
       icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
+      coord: response.data.coord,
       //search for a city
     });
   }
@@ -49,21 +52,19 @@ export default function Forecast(props) {
                   <input
                     type="text"
                     className="form-control"
-                    placeholder="city . . ."
+                    placeholder="Search a city . . ."
                     onChange={handleCityChange}
                   />
-                  <input
+
+                  <button
                     className="search-btn btn btn-info"
                     type="submit"
-                    value="🔍"
-                  />
+                    value="Submit"
+                  >
+                    {element}
+                  </button>
                 </div>
               </form>
-            </div>
-            <div className="col text-right">
-              <button type="button" className="btn btn-info">
-                Current Location
-              </button>
             </div>
           </div>
         </div>

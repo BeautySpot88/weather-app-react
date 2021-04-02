@@ -1,8 +1,14 @@
-.WeatherIcon img {
-  width: 20%;
+.WeatherIcon {
   height: auto;
+  display: inline;
 }
 
-.WeatherForecastPreview img {
+.WeatherIcon img {
+  width: 120%;
+  height: auto;
+  display: inline;
+}
+
+.WeatherForecastHours img {
   width: 50%;
 }

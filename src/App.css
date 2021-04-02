@@ -1,5 +1,5 @@
-.App {
-  border: solid 2px black;
+.Weather-App {
+  border: solid 2px grey;
   margin: 16px auto;
-  max-width: 80%;
+  max-width: 70%;
 }

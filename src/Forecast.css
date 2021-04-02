@@ -1,5 +1,12 @@
 h1 {
   text-transform: capitalize;
+  display: inline block;
+}
+
+h2 {
+  font-size: 45px;
+  margin: 0px;
+  line-height: 0.9;
 }
 
 .Search {
@@ -12,8 +19,26 @@ h1 {
   color: aquamarine;
 }
 
+.temp {
+  display: inline-block;
+  margin: 5px;
+}
+
+.tempIcon {
+  display: inline-block;
+  margin: 5px;
+}
+
+.humidityWind {
+  padding-top: 55px;
+}
+
+.humidityWind img {
+  width: 30px;
+}
+
 .Weather {
-  text-align: center;
+  text-align: left;
 }
 
 .Weather p {
@@ -31,4 +56,8 @@ h1 {
   position: relative;
   top: -16px;
   margin: 10px 6px;
+}
+
+.date {
+  font-size: 25px;
 }

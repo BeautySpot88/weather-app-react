@@ -1,10 +1,11 @@
 import Forecast from "./Forecast";
+
 import "./App.css";
 
 export default function App() {
   return (
-    <div className="outside">
-      <div className="App">
+    <div className="App">
+      <div className="Weather-App">
         <div className="container">
           <main>
             <Forecast defaultCity="Hanoi" />
