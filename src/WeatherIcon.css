@@ -1,0 +1,8 @@
+.WeatherIcon img {
+  width: 20%;
+  height: auto;
+}
+
+.WeatherForecastPreview img {
+  width: 50%;
+}

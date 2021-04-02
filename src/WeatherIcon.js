@@ -1,5 +1,5 @@
 import React from "react";
-import "./App.css";
+import "./WeatherIcon.css";
 
 export default function WeatherIcon(props) {
   const codeMapping = {
