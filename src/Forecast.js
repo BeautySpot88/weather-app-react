@@ -52,7 +52,11 @@ export default function Forecast(props) {
                     placeholder="city . . ."
                     onChange={handleCityChange}
                   />
-                  <input className="search-btn" type="submit" value="🔍" />
+                  <input
+                    className="search-btn btn btn-info"
+                    type="submit"
+                    value="🔍"
+                  />
                 </div>
               </form>
             </div>

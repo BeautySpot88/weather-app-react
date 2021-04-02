@@ -20,7 +20,7 @@ h1 {
   text-align: left;
 }
 
-.Weather li {
+.Weather ul {
   list-style-type: none;
   margin: 0px;
   padding: 0px;
