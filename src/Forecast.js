@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo";
-import WeatherForecast from "./WeatherForecast";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearchLocation } from "@fortawesome/free-solid-svg-icons";
 
@@ -69,7 +69,6 @@ export default function Forecast(props) {
           </div>
         </div>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast city={weatherData.city} />
       </div>
     );
   } else {
