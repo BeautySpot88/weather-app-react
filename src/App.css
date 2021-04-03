@@ -1,9 +1,17 @@
+body {
+  color: white;
+  background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
+}
+
 footer {
   padding-left: 30px;
 }
 
 .Weather-App {
-  border: solid 2px grey;
+  border: solid 2px rgb(128, 128, 128, 0.2);
   margin: 16px auto;
   max-width: 70%;
+  border-radius: 16px;
+  box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
+  background: rgb(128, 128, 128, 0.4);
 }

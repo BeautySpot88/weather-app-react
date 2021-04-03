@@ -12,6 +12,7 @@ export default function App() {
           </main>
         </div>
       </div>
+
       <footer>
         Created by Ebele and is{" "}
         <a
