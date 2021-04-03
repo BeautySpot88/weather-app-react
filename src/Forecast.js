@@ -23,14 +23,14 @@ export default function Forecast(props) {
       humidity: response.data.main.humidity,
       icon: response.data.weather[0].icon,
       description: response.data.weather[0].description,
-      coord: response.data.coord,
+      coords: response.data.coord,
       //search for a city
     });
   }
   function search() {
     let apiKey = "4964201fe38c8af7f212aad270301c64";
     let units = "metric";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+    let apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(showWeatherData);
   }
 
@@ -70,7 +70,7 @@ export default function Forecast(props) {
           </div>
         </div>
         <WeatherInfo data={weatherData} />
-        <DailyWeather />
+        <DailyWeather coord={weatherData.coords} />
       </div>
     );
   } else {
