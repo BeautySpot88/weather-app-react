@@ -35,10 +35,13 @@ h2 {
 
 .humidityWind img {
   width: 30px;
+  margin: 0px;
+  padding: 0px;
 }
 
 .Weather {
   text-align: left;
+  margin-left: 16px;
 }
 
 .Weather p {
@@ -54,10 +57,23 @@ h2 {
 .unit {
   font-size: 17px;
   position: relative;
-  top: -16px;
+  top: -50px;
   margin: 10px 6px;
 }
 
 .date {
   font-size: 25px;
+}
+
+.temperature {
+  font-size: 90px;
+}
+
+.WeatherTemperature {
+  margin-top: 25px;
+}
+.icon-col,
+.info-col {
+  margin: 0px;
+  padding: 0px;
 }
