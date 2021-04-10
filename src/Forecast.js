@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import DailyWeather from "./DailyWeather";
+import WeatherForecast from "./WeatherForecast";
 import WeatherInfo from "./WeatherInfo";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -70,7 +70,7 @@ export default function Forecast(props) {
           </div>
         </div>
         <WeatherInfo data={weatherData} />
-        <DailyWeather coord={weatherData.coords} />
+        <WeatherForecast coord={weatherData.coords} />
       </div>
     );
   } else {

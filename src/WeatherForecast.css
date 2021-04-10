@@ -1,0 +1,33 @@
+.WeatherForecast {
+  text-align: center;
+}
+
+.WeatherForecast img {
+  width: 65px;
+}
+
+.DailyWeather-min {
+  opacity: 0.6;
+  margin-left: 5px;
+}
+.dailyForecast {
+  margin-bottom: 20px;
+}
+
+.HourlyWeather {
+  text-align: center;
+  font-size: 50%;
+}
+
+.HourlyWeather h3 {
+  font-size: 16px;
+  margin: 10px;
+}
+
+.HourlyWeather hr {
+  border-top: 1px dotted rgb(128, 128, 128, 0.6);
+}
+
+.HourlyWeather img {
+  width: auto;
+}
